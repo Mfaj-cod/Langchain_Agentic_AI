@@ -33,11 +33,9 @@ git clone https://github.com/langchain-ai/lca-langchainV1-essentials.git
 cd ./lca-langchainV1-essentials/python
 ```
 
-Make a copy of example.env
-
 ```bash
 # Create .env file
-cp example.env .env
+.env
 ```
 
 Insert API keys directly into .env file, OpenAI (required) and [LangSmith](#getting-started-with-langsmith) (optional)
