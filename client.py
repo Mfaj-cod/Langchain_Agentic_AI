@@ -9,6 +9,7 @@ import asyncio
 
 load_dotenv()
 mcp_tools = []
+
 async def main():
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -17,14 +18,16 @@ async def main():
         {
             "math":{
                 "command":sys.executable,
-                "args":[math_script], #Ensure correct absolute path
+                "args":[math_script],
                 "transport":"stdio",
             },
         }
     )
 
     os.environ['GOOGLE_API_KEY'] = os.getenv("GOOGLE_API_KEY")
+
     tools = await client.get_tools()
+
     model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
     agent = create_agent(
         model,
